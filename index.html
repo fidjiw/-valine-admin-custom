@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>账单管理 - Valine Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">财务中心</p>
+        <h1>账单管理</h1>
+        <p class="subtitle">集中查看并管理客户账单、收款状态与对账进度。</p>
+      </div>
+      <div class="actions">
+        <button class="ghost">导入账单</button>
+        <button class="primary">新建账单</button>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="card">
+        <p>本月应收</p>
+        <h2>¥ 128,450</h2>
+        <span class="trend up">+12.4%</span>
+      </div>
+      <div class="card">
+        <p>已收金额</p>
+        <h2>¥ 96,780</h2>
+        <span class="trend down">-4.8%</span>
+      </div>
+      <div class="card">
+        <p>逾期待收</p>
+        <h2>¥ 14,320</h2>
+        <span class="trend up">+2.1%</span>
+      </div>
+      <div class="card">
+        <p>待开票</p>
+        <h2>¥ 8,640</h2>
+        <span class="trend neutral">0%</span>
+      </div>
+    </section>
+
+    <section class="filters">
+      <div class="filter-group">
+        <label>客户</label>
+        <input type="text" placeholder="搜索客户名称" />
+      </div>
+      <div class="filter-group">
+        <label>账单周期</label>
+        <select>
+          <option>2024年9月</option>
+          <option>2024年8月</option>
+          <option>2024年7月</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>状态</label>
+        <select>
+          <option>全部</option>
+          <option>待支付</option>
+          <option>已支付</option>
+          <option>逾期</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>负责人</label>
+        <select>
+          <option>全部团队</option>
+          <option>华北一组</option>
+          <option>华南二组</option>
+          <option>大客户组</option>
+        </select>
+      </div>
+      <button class="ghost">重置筛选</button>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h3>账单列表</h3>
+        <div class="panel-actions">
+          <button class="ghost">批量发送</button>
+          <button class="ghost">导出报表</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>账单编号</th>
+              <th>客户名称</th>
+              <th>周期</th>
+              <th>金额</th>
+              <th>状态</th>
+              <th>付款进度</th>
+              <th>负责人</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#INV-20240901</td>
+              <td>星辰科技</td>
+              <td>2024.09</td>
+              <td>¥ 28,000</td>
+              <td><span class="status pending">待支付</span></td>
+              <td>
+                <div class="progress">
+                  <span style="width: 40%"></span>
+                </div>
+                <small>40%</small>
+              </td>
+              <td>李珊</td>
+              <td class="actions-cell">
+                <button class="link">提醒</button>
+                <button class="link">详情</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-20240902</td>
+              <td>北岸物流</td>
+              <td>2024.09</td>
+              <td>¥ 15,400</td>
+              <td><span class="status paid">已支付</span></td>
+              <td>
+                <div class="progress">
+                  <span style="width: 100%"></span>
+                </div>
+                <small>100%</small>
+              </td>
+              <td>王鹏</td>
+              <td class="actions-cell">
+                <button class="link">下载</button>
+                <button class="link">详情</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-20240903</td>
+              <td>云海医疗</td>
+              <td>2024.09</td>
+              <td>¥ 42,600</td>
+              <td><span class="status overdue">逾期</span></td>
+              <td>
+                <div class="progress">
+                  <span style="width: 72%"></span>
+                </div>
+                <small>72%</small>
+              </td>
+              <td>郑文</td>
+              <td class="actions-cell">
+                <button class="link">催收</button>
+                <button class="link">详情</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-20240904</td>
+              <td>晴空教育</td>
+              <td>2024.09</td>
+              <td>¥ 18,200</td>
+              <td><span class="status pending">待支付</span></td>
+              <td>
+                <div class="progress">
+                  <span style="width: 55%"></span>
+                </div>
+                <small>55%</small>
+              </td>
+              <td>周颖</td>
+              <td class="actions-cell">
+                <button class="link">提醒</button>
+                <button class="link">详情</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-20240905</td>
+              <td>岭南制造</td>
+              <td>2024.09</td>
+              <td>¥ 24,250</td>
+              <td><span class="status paid">已支付</span></td>
+              <td>
+                <div class="progress">
+                  <span style="width: 100%"></span>
+                </div>
+                <small>100%</small>
+              </td>
+              <td>韩雨</td>
+              <td class="actions-cell">
+                <button class="link">下载</button>
+                <button class="link">详情</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel-footer">
+        <div class="tags">
+          <span class="tag">待支付 6</span>
+          <span class="tag">逾期 2</span>
+          <span class="tag">已支付 12</span>
+        </div>
+        <div class="pagination">
+          <button class="ghost">上一页</button>
+          <span>第 1 页 / 共 4 页</span>
+          <button class="ghost">下一页</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="side-panel">
+      <div class="panel-header">
+        <h3>今日待办</h3>
+        <button class="ghost">新增提醒</button>
+      </div>
+      <ul class="todo-list">
+        <li>
+          <div>
+            <strong>发送对账单</strong>
+            <p>星辰科技 - 9月应收确认</p>
+          </div>
+          <span class="badge">10:30</span>
+        </li>
+        <li>
+          <div>
+            <strong>跟进逾期付款</strong>
+            <p>云海医疗 - 逾期 12 天</p>
+          </div>
+          <span class="badge danger">14:00</span>
+        </li>
+        <li>
+          <div>
+            <strong>开票资料核对</strong>
+            <p>岭南制造 - 开票信息更新</p>
+          </div>
+          <span class="badge">16:00</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
